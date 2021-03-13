@@ -1,0 +1,16 @@
+
+.box {
+	background-color: #ddd;
+	padding:1em;
+}
+.bg-gray {
+	background-color: #666;
+	border:solid 1px;
+	color:#fff;
+}
+.bg-blue {
+	background-color:cornflowerblue;
+	border:solid 1px;
+	color:#fff;
+}
+

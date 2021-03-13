@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculadora Plazo Fijo</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+     // Example starter JavaScript for disabling form submissions if there are invalid fields
+ (function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }else{
+          calcular();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark mb-5">
+    <a href="" class="navbar-brand">Intereses Plazo Fijo</a>
+  </nav>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Complete los siguientes datos</h2>
+        <form id="form" method="post" class="my-4 needs-validation" novalidate onsubmit="return false">
+          <div class="form-group row mb-3">
+            <label for="" class="col-sm-3 col-form-label">Capital: </label>
+            <div class="input-group col-sm-9">
+              <div class="input-group-prepend">
+                <span class="input-group-text form-control">$</span>
+              </div>
+              <input type="number" id="capital" class="form-control" name="monto" placeholder="Capital" required step="0.01"  min="0.01">
+              <div class="invalid-feedback">
+                Ingrese el capital a invertir.
+              </div>
+            </div>
+            
+          </div>
+          <div class="form-group row mb-3">
+            <label for="" class="col-sm-3 col-form-label">Tasa Nominal Anual: </label>
+            <div class="input-group col-sm-9">
+              <input type="number" id="tna" class="form-control" name="tasa" placeholder="Tasa de interés" required step="0.000001" min="0.01">
+              <div class="input-group-prepend">
+                <span class="input-group-text form-control">%</span>
+              </div>
+              <div class="invalid-feedback">
+                Ingrese la tasa nominal anual.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="" class="col-sm-3 col-form-label">Días: </label>
+            <div class="input-group col-sm-9">
+              <input type="number" id="dias" class="form-control" name="plazo" placeholder="Días" required min="30">
+              <div class="input-group-prepend">
+                <span class="input-group-text form-control">días</span>
+              </div>
+              <div class="invalid-feedback">
+                Mínimo 30 días.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <input id="calc" type="submit" value="Calcular" class="btn btn-primary m-auto">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8">
+        <div id="ganancia">         
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- Cierre Contenedor -->
+  <script src="js/main.js" async></script>
+</body>
+</html>|
